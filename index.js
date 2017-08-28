@@ -23,4 +23,10 @@ io.on('connection',function(socket){
         //refering to all sockets
         io.sockets.emit('chat',data);
     });
+
+    socket.on('typing',function(data){
+        //broadcasting message to all expect the one who is typing
+        socket.broadcast.emit('typing',data);
+    });
 });
+
