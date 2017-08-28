@@ -17,4 +17,10 @@ var io=socket(server);
 //socket.io is listening for a connection
 io.on('connection',function(socket){
     console.log('Made socket connection',socket.id);
-})
+
+    //listening for event
+    socket.on('chat',function(data){
+        //refering to all sockets
+        io.sockets.emit('chat',data);
+    });
+});
