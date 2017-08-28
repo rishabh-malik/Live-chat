@@ -14,3 +14,9 @@ btn.addEventListener('click',function(){
         handle: handle.value
     });
 });
+
+//listen for events
+socket.on('chat',function(data){
+    //manipulating the dom
+    output.innerHTML+='<p><strong>'+data.handle+':</strong> '+ data.message+'</p>';
+});
