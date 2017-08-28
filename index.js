@@ -16,5 +16,5 @@ var io=socket(server);
 
 //socket.io is listening for a connection
 io.on('connection',function(socket){
-    console.log('Made socket connection')
+    console.log('Made socket connection',socket.id);
 })
